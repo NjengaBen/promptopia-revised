@@ -1,7 +1,7 @@
 import React from "react";
 
 const Forn = () => {
-  return <div>Forn</div>;
+  return <div>Hello Forn</div>;
 };
 
 export default Forn;
