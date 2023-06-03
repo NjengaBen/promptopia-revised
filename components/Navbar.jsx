@@ -57,7 +57,9 @@ const Navbar = () => {
                 <button
                   type="button"
                   key={provider.name}
-                  onClick={() => signIn(provider.id)}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
                   className="black_btn"
                 >
                   Sign In
@@ -66,7 +68,6 @@ const Navbar = () => {
           </>
         )}
       </div>
-
       {/* Mobile Navigation */}
       <div className="sm:hidden flex relative">
         {session?.user ? (
@@ -116,7 +117,9 @@ const Navbar = () => {
                 <button
                   type="button"
                   key={provider.name}
-                  onClick={() => signIn(provider.id)}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
                   className="black_btn"
                 >
                   SignIn
