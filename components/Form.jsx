@@ -1,6 +1,7 @@
-import React from "react";
+import { useState } from "react";
+import Link from "next/link";
 
-const Forn = ({ type, post, setPost, submitting, handleSubmit }) => {
+const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
     <section className="w-full max-w-full flex-start flex-col">
       <h1 className="head_text text-left">
@@ -10,7 +11,7 @@ const Forn = ({ type, post, setPost, submitting, handleSubmit }) => {
         {type} and share amazing prompts with the world and let your imagination
         run wild with any AI-powered platform.
       </p>
-      <Form
+      <form
         onSubmit={handleSubmit}
         className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
       >
@@ -53,9 +54,9 @@ const Forn = ({ type, post, setPost, submitting, handleSubmit }) => {
             {submitting ? `${type}...` : type}
           </button>
         </div>
-      </Form>
+      </form>
     </section>
   );
 };
 
-export default Forn;
+export default Form;
