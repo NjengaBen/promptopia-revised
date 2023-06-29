@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -12,11 +13,12 @@ const Navbar = () => {
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders();
-
+      console.log(response);
       setProviders(response);
     };
     setUpProviders();
   }, []);
+
   return (
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex flex-center gap-2">
@@ -29,7 +31,6 @@ const Navbar = () => {
         />
         <p className="logo_text">Promptopia</p>
       </Link>
-
       {/* Desktop Navigation */}
       <div className="sm:flex hidden">
         {session?.user ? (
