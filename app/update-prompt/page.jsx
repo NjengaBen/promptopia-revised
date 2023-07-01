@@ -1,13 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useSearchParams } from "next/navigation";
 import Form from "@components/Form";
 
 const EditPrompt = () => {
   const router = useRouter();
-  const useSearchParams = useSearchParams();
-  const promptId = useSearchParams.get("id");
+  const searchParams = useSearchParams();
+  const promptId = searchParams.get("id");
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({ prompt: "", tag: "" });
 
