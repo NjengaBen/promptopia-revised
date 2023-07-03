@@ -9,6 +9,7 @@ const CreatePrompt = () => {
   const { data: session } = useSession();
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({ prompt: "", tag: "" });
+
   const createPrompt = (e) => {
     e.preventDefault();
     setSubmitting(true);
