@@ -13,7 +13,6 @@ const Navbar = () => {
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders();
-      console.log(response);
       setProviders(response);
     };
     setUpProviders();
@@ -24,7 +23,7 @@ const Navbar = () => {
       <Link href="/" className="flex flex-center gap-2">
         <Image
           src="/assets/images/logo.svg"
-          alt="Promptopia Logo"
+          alt="logo"
           width={30}
           height={30}
           className="object-contain"
@@ -79,7 +78,7 @@ const Navbar = () => {
               height={37}
               alt="profile"
               className="rounded-full"
-              onClick={() => setToggleDropdown((prev) => !prev)}
+              onClick={() => setToggleDropdown(!toggleDropdown)}
             />
 
             {toggleDropdown && (
