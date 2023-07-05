@@ -20,25 +20,24 @@ const EditPrompt = () => {
         tag: data.tag,
       });
     };
-    if (promptId) getPromptDetails;
+    if (promptId) getPromptDetails();
   }, [promptId]);
 
-  const updatePrompt = (e) => {
+  const updatePrompt = async (e) => {
     e.preventDefault();
     setSubmitting(true);
 
     if (!promptId) alert("Prompt ID not found");
 
     try {
-      const res = async () => {
-        await fetch(`api/propmt/${promptId}`, {
-          method: "PATCH",
-          body: JSON.stringify({
-            prompt: post.prompt,
-            tag: post.tag,
-          }),
-        });
-      };
+      const res = await fetch(`api/prompt/${promptId}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          prompt: post.prompt,
+          tag: post.tag,
+        }),
+      });
+
       if (res.ok) {
         router.push("/");
       }
